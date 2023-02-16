@@ -4,7 +4,7 @@
       :topic-title="activeTopic && activeTopic.title"
       :text="activeTopic && activeTopic.fullText"
     ></active-element>
-    <knowledge-base @select-topic="activateTopic"></knowledge-base>
+    <knowledge-base></knowledge-base>
   </div>
 </template>
 
@@ -35,6 +35,7 @@ export default {
   provide(){
     return {
       topics:this.topics,
+      SelectTopic:this.activateTopic,
     }
   },
   methods: {
@@ -42,6 +43,19 @@ export default {
       this.activeTopic = this.topics.find((topic) => topic.id === topicId);
     },
   },
+  mounted(){
+    setTimeout(()=>{
+      const deta={
+        id: 'shafiq',
+          title: 'Pros',
+          description:
+            'Propss are a core concept for building Vue UIs and apps',
+          fullText:
+            'With components, you can split logic (and markup) into separate building blocks and then combine those building blocks (and re-use them) to build powerful user interfaces.',
+      };
+      this.topics.push(deta);
+    },3000)
+  }
 };
 </script>
 
