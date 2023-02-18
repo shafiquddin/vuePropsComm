@@ -1,28 +1,25 @@
 <template>
   <div>
     <the-header></the-header>
-    <badge-list></badge-list>
-    <user-info
-      :full-name="activeUser.name"
-      :info-text="activeUser.description"
-      :role="activeUser.role"
-    ></user-info>
-    <course-goal #default="slotProps">
-        <h3>{{ slotProps.item }}</h3>
-        <p>{{ slotProps.etcProp }}</p>
-    </course-goal>
+    <div>
+      <button @click="setComponetId('active-user')">Active User</button>
+      <button @click="setComponetId('Manage-user')">Manage User</button>
+    </div>
+    <keep-alive>
+    <component :is="componentId"></component>
+  </keep-alive>
   </div>
 </template>
 
 <script>
 import TheHeader from './components/TheHeader.vue';
-import BadgeList from './components/BadgeList.vue';
-import UserInfo from './components/UserInfo.vue';
-import CourseGoal from './components/CourseGoal.vue';
+import ActiveUser from './components/ActiveUser.vue';
+import ManageUser from './components/ManageUser.vue';
 
 export default {
   data() {
     return {
+      componentId:'active-user',
       activeUser: {
         name: 'Maximilian Schwarzmüller',
         description: 'Site owner and admin',
@@ -30,11 +27,15 @@ export default {
       },
     };
   },
+  methods:{
+    setComponetId(id){
+      this.componentId=id;
+    }
+  },
   components:{
     TheHeader,
-    UserInfo,
-    BadgeList,
-    CourseGoal,
+    ActiveUser,
+    ManageUser,
   }
 };
 </script>
