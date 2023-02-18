@@ -2,12 +2,12 @@
   <div>
     <the-header></the-header>
     <div>
-      <button @click="setComponetId('active-user')">Active User</button>
-      <button @click="setComponetId('Manage-user')">Manage User</button>
+      <button @click="setComponetId('active-user')">Active</button>
+      <button @click="setComponetId('manage-user')">Manage</button>
     </div>
     <keep-alive>
-    <component :is="componentId"></component>
-  </keep-alive>
+      <component :is="componentId"></component>
+    </keep-alive>
   </div>
 </template>
 
@@ -35,7 +35,7 @@ export default {
   components:{
     TheHeader,
     ActiveUser,
-    ManageUser,
+    ManageUser
   }
 };
 </script>
