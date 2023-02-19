@@ -1,3 +1,3 @@
 <template>
-    <h2>Active User</h2>
+    <h2>Manage User</h2>
 </template>

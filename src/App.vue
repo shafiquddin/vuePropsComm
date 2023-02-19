@@ -2,11 +2,11 @@
   <div>
     <the-header></the-header>
     <div>
-      <button @click="setComponetId('active-user')">Active</button>
-      <button @click="setComponetId('manage-user')">Manage</button>
+      <button @click="setComponenId('active-user')">Active User</button>
+      <button @click="setComponenId('manage-user')">Manage User</button>
     </div>
     <keep-alive>
-      <component :is="componentId"></component>
+    <component :is="componentId"></component>
     </keep-alive>
   </div>
 </template>
@@ -28,14 +28,14 @@ export default {
     };
   },
   methods:{
-    setComponetId(id){
+    setComponenId(id){
       this.componentId=id;
     }
   },
   components:{
     TheHeader,
     ActiveUser,
-    ManageUser
+    ManageUser,
   }
 };
 </script>
