@@ -13,7 +13,7 @@
     </div>
 </template>
 <script>
-import ErrorAlert from './ErrorAlert.vue';
+import ErrorAlert from './Model/ErrorAlert.vue';
 export default {
     data(){
         return{
