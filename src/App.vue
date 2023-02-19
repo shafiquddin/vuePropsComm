@@ -13,8 +13,8 @@
 
 <script>
 import TheHeader from './components/Layout/TheHeader.vue';
-import ActiveUser from './components/ActiveUser.vue';
-import ManageUser from './components/ManageUser.vue';
+import ActiveUser from './components/Users/ActiveUser.vue';
+import ManageUser from './components/Users/ManageUser.vue';
 
 export default {
   data() {
