@@ -1,23 +1,10 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import ActiveUser from './Components/ActiveUser.vue';
-import UserData from './Components/UserData.vue';
+import { createApp } from 'vue';
+import App from './App.vue';
+import BaseBadge from './components/UI/BaseBadge.vue';
+import BaseCard from './components/UI/BaseCard.vue';
 
-const app=createApp(App);
-app.component('user-data',UserData);
-app.component('active-user',ActiveUser);
+const app = createApp(App);
+app.component('base-badge', BaseBadge);
+app.component('base-card',BaseCard);
 
 app.mount('#app');
-
-// Task 1: 
-// Add two components to the app: 
-// An ActiveUser component and an UserData component
-// ActiveUser should output a username (h2) and age (h3)
-// UserData should output two input fields => for name and age
-// Optional: Add styling of your choice
-
-// Task 2: Output both components side-by-side in your main App template
-
-// Task 3: Add user data and ensure it contains a name and age
-// User data should be output in ActiveUser
-// It should be updated via the UserData component
