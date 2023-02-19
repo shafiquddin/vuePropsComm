@@ -6,37 +6,37 @@
       <button @click="setComponenId('manage-user')">Manage User</button>
     </div>
     <keep-alive>
-    <component :is="componentId"></component>
+      <component :is="componentId"></component>
     </keep-alive>
   </div>
 </template>
 
 <script>
-import TheHeader from './components/Layout/TheHeader.vue';
-import ActiveUser from './components/ActiveUser.vue';
-import ManageUser from './components/ManageUser.vue';
+import TheHeader from "./components/Layout/TheHeader.vue";
+import ManageUser from "./components/Users/ManageUser.vue";
+import ActiveUser from "./components/Users/ActiveUser.vue";
 
 export default {
   data() {
     return {
-      componentId:'active-user',
+      componentId: "active-user",
       activeUser: {
-        name: 'Maximilian Schwarzmüller',
-        description: 'Site owner and admin',
-        role: 'admin',
+        name: "Maximilian Schwarzmüller",
+        description: "Site owner and admin",
+        role: "admin",
       },
     };
   },
-  methods:{
-    setComponenId(id){
-      this.componentId=id;
-    }
+  methods: {
+    setComponenId(id) {
+      this.componentId = id;
+    },
   },
-  components:{
+  components: {
     TheHeader,
     ActiveUser,
     ManageUser,
-  }
+  },
 };
 </script>
 
